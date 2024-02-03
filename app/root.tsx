@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { cssBundleHref } from '@remix-run/css-bundle';
-import type { LinksFunction } from '@remix-run/node';
+import { type LinksFunction, type MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -8,11 +9,54 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-import { useNonce } from './routes/utils/nonce-provider';
+import tailwindStyleSheetUrl from './styles/tailwind.css';
+import { useNonce } from './utils/nonce-provider';
+import { GeneralErrorBoundary } from './components/error-boundary';
 
-export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
-];
+export const links: LinksFunction = () => {
+  return [
+    { rel: 'preload', href: tailwindStyleSheetUrl, as: 'style' },
+    cssBundleHref ? { rel: 'preload', href: cssBundleHref, as: 'style' } : null,
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      href: '/favicons/apple-touch-icon.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/favicons/favicon-32x32.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      href: '/favicons/favicon-16x16.png',
+    },
+    { rel: 'manifest', href: '/site.webmanifest' },
+    { rel: 'icon', href: '/favicon.ico' },
+    { rel: 'stylesheet', href: tailwindStyleSheetUrl },
+    cssBundleHref ? { rel: 'stylesheet', href: cssBundleHref } : null,
+  ].filter(Boolean) as [];
+};
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: 'TamEctosphere' },
+    {
+      name: 'description',
+      content: `Experience. innovation and creativity with my portfolio website, where I showcase my extensive skills as a seasoned software developer. From web applications to mobile development, my expertise in various programming languages and frameworks will elevate your project to the next level. Explore my portfolio today and let's turn your ideas into reality.`,
+    },
+    { charSet: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, user-scalable=no' },
+    { property: 'og:title', content: 'TamEctosphere' },
+    {
+      property: 'og:description',
+      content: `Experience. innovation and creativity with my portfolio website, where I showcase my extensive skills as a seasoned software developer. From web applications to mobile development, my expertise in various programming languages and frameworks will elevate your project to the next level. Explore my portfolio today and let's turn your ideas into reality.`,
+    },
+  ];
+};
 
 function Document({
   children,
@@ -24,14 +68,14 @@ function Document({
   env?: Record<string, string>;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`dark h-full overflow-x-hidden`}>
       <head>
         <Meta />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Links />
       </head>
-      <body>
+      <body className="bg-background text-foreground">
         {children}
         <script
           nonce={nonce}
@@ -52,21 +96,21 @@ export default function App() {
 
   return (
     <Document nonce={nonce}>
-      <Outlet />
+      <div className="flex h-screen flex-col justify-between">
+        <div className="flex-1">
+          <Outlet />
+        </div>
+      </div>
     </Document>
-    // <html lang="en">
-    //   <head>
-    //     <meta charSet="utf-8" />
-    //     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    //     <Meta />
-    //     <Links />
-    //   </head>
-    //   <body>
-    //     <Outlet />
-    //     <ScrollRestoration />
-    //     <Scripts />
-    //     <LiveReload />
-    //   </body>
-    // </html>
+  );
+}
+
+export function ErrorBoundary() {
+  const nonce = useNonce();
+
+  return (
+    <Document nonce={nonce}>
+      <GeneralErrorBoundary />
+    </Document>
   );
 }
