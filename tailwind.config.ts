@@ -17,6 +17,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        ectopic: ['"Space Grotesk"', 'sans-serif'],
+      },
       colors: {
         'ecto-1': '#E5C4AB',
         border: 'hsl(var(--border))',
@@ -52,6 +55,9 @@ export default {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+      },
+      height: {
+        'half-v': '50vh',
       },
       borderRadius: {
         lg: 'var(--radius)',

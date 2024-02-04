@@ -8,10 +8,13 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from '@remix-run/react';
 import tailwindStyleSheetUrl from './styles/tailwind.css';
 import { useNonce } from './utils/nonce-provider';
 import { GeneralErrorBoundary } from './components/error-boundary';
+import { Footer } from './components/Footer';
+import { NavbarMenu } from './components/Navbar';
 
 export const links: LinksFunction = () => {
   return [
@@ -58,6 +61,12 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export async function loader() {
+  const currentYear = new Date().getFullYear();
+
+  return { currentYear };
+}
+
 function Document({
   children,
   nonce,
@@ -68,7 +77,10 @@ function Document({
   env?: Record<string, string>;
 }) {
   return (
-    <html lang="en" className={`dark h-full overflow-x-hidden`}>
+    <html
+      lang="en"
+      className={`dark min-h-screen overflow-x-hidden font-ectopic`}
+    >
       <head>
         <Meta />
         <meta charSet="utf-8" />
@@ -92,15 +104,14 @@ function Document({
 }
 
 export default function App() {
+  const { currentYear } = useLoaderData<typeof loader>();
   const nonce = useNonce();
 
   return (
     <Document nonce={nonce}>
-      <div className="flex h-screen flex-col justify-between">
-        <div className="flex-1">
-          <Outlet />
-        </div>
-      </div>
+      <NavbarMenu />
+      <Outlet />
+      <Footer year={currentYear} />
     </Document>
   );
 }

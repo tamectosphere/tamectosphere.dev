@@ -20,6 +20,7 @@ module.exports = {
     es6: true,
   },
 
+  
   // Base config
   extends: ["eslint:recommended"],
 
@@ -28,6 +29,7 @@ module.exports = {
     {
       files: ["**/*.{js,jsx,ts,tsx}"],
       plugins: ["react", "jsx-a11y"],
+      
       extends: [
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
@@ -54,6 +56,10 @@ module.exports = {
       files: ["**/*.{ts,tsx}"],
       plugins: ["@typescript-eslint", "import"],
       parser: "@typescript-eslint/parser",
+      rules: {
+        "@typescript-eslint/no-explicit-any": "off"
+  },
+
       settings: {
         "import/internal-regex": "^~/",
         "import/resolver": {

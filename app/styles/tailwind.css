@@ -4,6 +4,7 @@
  
 @layer base {
   :root {
+    
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -65,4 +66,31 @@
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 200;
+  src: url("/fonts/space-grotesk.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 400;
+  src: url("/fonts/space-grotesk.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 600;
+  src: url("/fonts/space-grotesk.ttf") format("truetype");
+}
+
+.blink-affect {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
