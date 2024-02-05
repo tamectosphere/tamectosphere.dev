@@ -36,6 +36,9 @@ module.exports = {
         "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
       ],
+      rules: {
+        "react/prop-types": "off"
+      },
       settings: {
         react: {
           version: "detect",
@@ -58,8 +61,7 @@ module.exports = {
       parser: "@typescript-eslint/parser",
       rules: {
         "@typescript-eslint/no-explicit-any": "off"
-  },
-
+      },
       settings: {
         "import/internal-regex": "^~/",
         "import/resolver": {

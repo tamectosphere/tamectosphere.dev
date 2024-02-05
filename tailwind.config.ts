@@ -58,6 +58,7 @@ export default {
       },
       height: {
         'half-v': '50vh',
+        '80-v': '80vh',
       },
       borderRadius: {
         lg: 'var(--radius)',

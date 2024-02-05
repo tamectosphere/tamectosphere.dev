@@ -12,9 +12,9 @@ import {
 } from '@remix-run/react';
 import tailwindStyleSheetUrl from './styles/tailwind.css';
 import { useNonce } from './utils/nonce-provider';
-import { GeneralErrorBoundary } from './components/error-boundary';
-import { Footer } from './components/Footer';
-import { NavbarMenu } from './components/Navbar';
+import { GeneralErrorBoundary } from './components/common/GeneralErrorBoundary';
+import { Footer } from './components/layouts/Footer';
+import { NavbarMenu } from './components/layouts/Navbar';
 
 export const links: LinksFunction = () => {
   return [
