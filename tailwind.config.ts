@@ -22,6 +22,7 @@ export default {
       },
       colors: {
         'ecto-1': '#E5C4AB',
+        'ecto-1-30': '#f7ede5',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

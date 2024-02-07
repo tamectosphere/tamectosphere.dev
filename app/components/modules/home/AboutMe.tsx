@@ -55,7 +55,7 @@ export function AboutMe() {
         <AvatarFallback>TE</AvatarFallback>
       </Avatar>
       <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight lg:text-5xl">
-        Behind the Code: My Journey
+        Charting the Code: A Glimpse into Tam&apos;s spehere
       </h1>
       <div className="hidden md:block flex flex-col space-y-4 leading-7 text-2xl">
         {allContent()}

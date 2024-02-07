@@ -46,17 +46,41 @@ export const links: LinksFunction = () => {
 
 export const meta: MetaFunction = () => {
   return [
-    { title: 'TamEctosphere' },
+    { title: 'TamEctosphere - Software Developer Portfolio' },
     {
       name: 'description',
       content: `Experience. innovation and creativity with my portfolio website, where I showcase my extensive skills as a seasoned software developer. From web applications to mobile development, my expertise in various programming languages and frameworks will elevate your project to the next level. Explore my portfolio today and let's turn your ideas into reality.`,
     },
+    {
+      name: 'author',
+      content: 'Pattadon Sa-ngasri',
+    },
     { charSet: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, user-scalable=no' },
+    {
+      name: 'og:author',
+      content: 'Pattadon Sa-ngasri',
+    },
     { property: 'og:title', content: 'TamEctosphere' },
     {
       property: 'og:description',
       content: `Experience. innovation and creativity with my portfolio website, where I showcase my extensive skills as a seasoned software developer. From web applications to mobile development, my expertise in various programming languages and frameworks will elevate your project to the next level. Explore my portfolio today and let's turn your ideas into reality.`,
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.yourwebsite.com',
+    },
+    {
+      name: 'og:image',
+      content: 'https://www.yourwebsite.com/og-image.jpg',
+    },
+    {
+      name: 'robots',
+      content: 'index, follow',
     },
   ];
 };
