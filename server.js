@@ -136,7 +136,7 @@ app.all(
 
 const portUsed = process.env.PORT || 3012;
 
-const server = app.listen(portUsed, async () => {
+const server = app.listen(portUsed, '0.0.0.0', async () => {
   console.log(`🚀  TamEctosphere have liftoff!`);
   
   const localUrl = `http://localhost:${portUsed}`;

@@ -71,12 +71,9 @@ export const meta: MetaFunction = () => {
       content: 'website',
     },
     {
-      name: 'og:url',
-      content: 'https://www.yourwebsite.com',
-    },
-    {
-      name: 'og:image',
-      content: 'https://www.yourwebsite.com/og-image.jpg',
+      property: 'og:image',
+      content:
+        'https://lh3.googleusercontent.com/pw/ABLVV866RvIWw4HRk60H7gAkgKbq0Jszc90xSwNoF0OOrfbrnKpnHt75Q_-Wf3m3P9hlaiQI_4X6zTjUpavD-gvwE7xN2n1XtCOrKbMEu2QX5RbiiW9xzP9QGTa1iaXRYHGA_ZDu699MUFgvQRGZjlKicAc=w574-h88-s-no-gm',
     },
     {
       name: 'robots',
