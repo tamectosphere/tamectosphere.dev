@@ -52,7 +52,7 @@ export function HeroBanner() {
       <animated.div style={props}>
         <animated.img
           src="/images/digital-element.png"
-          className=" w-72 md:w-96 lg:w-[26rem] xl:w-[26rem]"
+          className="z-40 w-72 md:w-96 lg:w-[26rem] xl:w-[26rem]"
           alt="Tametosphere Logo"
           style={propsFloating} // Apply the floating animation to the image
         />
@@ -60,15 +60,16 @@ export function HeroBanner() {
       {renderWelcome && (
         <>
           <animated.div style={props3} className="text-center pb-4">
-            <h3 className="scroll-m-20 text-xl font-semibold tracking-tight md:text-3xl lg:text-5xl">
-              TAMECTOSPHERE
-            </h3>
+            <h1 className="z-40 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl xl:text-5xl 2xl:text-8xl">
+              <span className="text-ecto-2">TAM</span>
+              <span className="text-ecto-1">ECTOSPHERE</span>
+            </h1>
             <br />
-            <h3 className="scroll-m-20 text-xl font-semibold tracking-tight md:text-3xl lg:text-5xl">
+            <h3 className="scroll-m-20 text-xl font-semibold tracking-tight text-ecto-2 md:text-3xl lg:text-5xl">
               Code Alchemist: Turning Ideas into Digital Reality
             </h3>
           </animated.div>
-          <div className="straight-lines 2xl:hidden"></div>
+          {/* <div className="straight-lines 2xl:hidden"></div> */}
           {/* <div className="felx flex-col justify-center items-center">
             <span>
               <ChevronDown className="h-4 w-4" />

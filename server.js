@@ -53,14 +53,6 @@ const build = await import(BUILD_PATH)
 let devBuild = build
 
 const initialBuild = await reimportServer();
-// const remixHandler =
-//   process.env.NODE_ENV === "development"
-//     ? await createDevRequestHandler(initialBuild)
-//     : createRequestHandler({
-//         build: initialBuild,
-//         mode: initialBuild.mode,
-//       });
-
 const app = express();
 
 app.use(compression());
@@ -208,34 +200,3 @@ if (MODE === 'development') {
 	closeWithGrace(() => buildWatcher.close())
 }
 
-
-/**
- * @param {ServerBuild} initialBuild
- * @returns {Promise<import('@remix-run/express').RequestHandler>}
- */
-// async function createDevRequestHandler(initialBuild) {
-//   let build = initialBuild;
-//   async function handleServerUpdate() {
-//     // 1. re-import the server build
-//     build = await reimportServer();
-//     // 2. tell Remix that this app server is now up-to-date and ready
-//     broadcastDevReady(build);
-//   }
-//   const chokidar = await import("chokidar");
-//   chokidar
-//     .watch(VERSION_PATH, { ignoreInitial: true })
-//     .on("add", handleServerUpdate)
-//     .on("change", handleServerUpdate);
-
-//   // wrap request handler to make sure its recreated with the latest build for every request
-//   return async (req, res, next) => {
-//     try {
-//       return createRequestHandler({
-//         build,
-//         mode: "development",
-//       })(req, res, next);
-//     } catch (error) {
-//       next(error);
-//     }
-//   };
-// }

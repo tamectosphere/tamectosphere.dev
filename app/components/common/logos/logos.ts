@@ -26,8 +26,13 @@ import alchemy from './alchemy.svg';
 import postman from './postman.svg';
 import sendgrid from './sendgrid.svg';
 import retool from './retool.svg';
+import rocket from './rocket.svg';
 
-export { default as stars } from './stars.jpg';
+export const rocketLogo = {
+  src: rocket,
+  alt: 'rocket',
+  href: '',
+};
 
 export const mainLogos = [
   {

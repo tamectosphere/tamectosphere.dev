@@ -1,13 +1,12 @@
 interface SkillsProp {
   logos: { src: string; alt: string; href: string }[];
-  paddingBtm: number;
+  paddingBtm?: number;
 }
 
 export function SkillLogos(props: SkillsProp) {
-  const { logos, paddingBtm } = props;
-  const className = `flex flex-row flex-wrap items-center justify-center gap-6 pt-6 pb-${paddingBtm}`;
+  const { logos } = props;
   return (
-    <div className={className}>
+    <div className="flex flex-row flex-wrap items-center justify-center gap-6 pt-6 pb-14 xl:pb-24">
       {logos.map((logo: { src: string; alt: string; href: string }) => (
         <a key={logo.alt} href={logo.href} target="_blank" rel="noreferrer">
           <img

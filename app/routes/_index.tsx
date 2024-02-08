@@ -7,14 +7,16 @@ import { Button } from '#app/components/ui/button';
 import { Link } from '@remix-run/react';
 import { ProjectOdyssey } from '#app/components/modules/home/ProjectOdyssey';
 import { Contact } from '#app/components/modules/home/Contact';
+import { Stars } from '#app/components/modules/home/Stars';
 
 export default function Index() {
   return (
     <>
       <div
         id="hero-banner"
-        className="container h-[90vh] flex flex-col items-center justify-start pt-32 md:h-[80vh] pt-20 lg:gap-0 xl:h-screen"
+        className=" container h-[90vh] flex flex-col items-center justify-start pt-32 md:h-[80vh] pt-20 lg:gap-0 xl:h-screen"
       >
+        <Stars />
         <HeroBanner />
       </div>
       <main className="flex flex-col gap-12 items-center justify-center pt-0 pb-20 px-12 lg:px-32 pt-20 xl:px-72">
@@ -23,7 +25,7 @@ export default function Index() {
         </section>
         <section
           id="about-me"
-          className="pb-28 flex flex-col gap-4 items-center justify-center "
+          className="pb-28 flex flex-col gap-4 items-center justify-center lg:gap-10 xl:gap-12"
         >
           <AboutMe />
         </section>
@@ -40,13 +42,18 @@ export default function Index() {
           className="pb-28 flex flex-col gap-4 items-center justify-center "
         >
           <MainStack />
-          <Button size="lg" className="text-lg" asChild>
-            <Link to="/tech-skills">Explore more stack</Link>
+          <Button
+            variant="ghost"
+            size="lg"
+            className="text-lg no-hover-effect"
+            asChild
+          >
+            <Link to="/tech-skills">Explore more stack 🚀</Link>
           </Button>
         </section>
         <section
           id="project-odyssey"
-          className="flex flex-col gap-4 items-center justify-center "
+          className="flex flex-col gap-32 items-center justify-center pb-28"
         >
           <ProjectOdyssey />
         </section>

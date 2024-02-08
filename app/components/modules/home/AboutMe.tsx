@@ -68,7 +68,7 @@ export function AboutMe() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle className="pb-4">
-              Behind the Code: My Journey
+              A Glimpse into Tam&apos;s spehere
             </DialogTitle>
             <div className="overflow-auto h-half-v flex flex-col space-y-4">
               {allContent()}
