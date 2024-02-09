@@ -91,6 +91,18 @@
   src: url("/fonts/space-grotesk.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Archivo Black";
+  font-weight: 400;
+  src: url("/fonts/archivo-black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Audiowide";
+  font-weight: 400;
+  src: url("/fonts/audiowide.ttf") format("truetype");
+}
+
 .blink-affect {
   animation: blinker 1s linear infinite;
 }

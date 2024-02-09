@@ -19,6 +19,8 @@ export default {
     extend: {
       fontFamily: {
         ectopic: ['"Space Grotesk"', 'sans-serif'],
+        ectopicTitle: ['"Archivo Black"', 'sans-serif'],
+        audiowide: ['"Audiowide"', 'sans-serif'],
       },
       colors: {
         'ecto-1': '#E5C4AB',
