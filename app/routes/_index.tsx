@@ -48,7 +48,9 @@ export default function Index() {
             className="text-lg no-hover-effect"
             asChild
           >
-            <Link to="/tech-skills">Explore more stack 🚀</Link>
+            <Link to="/tech-skills" prefetch="intent">
+              Explore more stack 🚀
+            </Link>
           </Button>
         </section>
         <section
