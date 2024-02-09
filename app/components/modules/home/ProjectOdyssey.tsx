@@ -7,7 +7,7 @@ export function ProjectOdyssey() {
   const [doneSlide, setDoneSlide] = useState(false);
   const githubUrl = 'https://github.com/tamectosphere';
 
-  const goToGithub = (value: number[]) => {
+  const shouldRideToProjectOdyssey = (value: number[]) => {
     if (value[0] === 100) {
       setDoneSlide(true);
     }
@@ -25,14 +25,16 @@ export function ProjectOdyssey() {
           className="text-lg no-hover-effect"
           asChild
         >
-          <Link to={githubUrl}>Go ride to a Project Odyssey 🚀</Link>
+          <Link to={githubUrl} target="_blank" rel="noopener noreferrer">
+            Go ride to a Project Odyssey 🚀
+          </Link>
         </Button>
       ) : (
         <RocketSlider
           defaultValue={[0]}
           max={100}
           step={1}
-          onValueCommit={(value) => goToGithub(value)}
+          onValueCommit={(value) => shouldRideToProjectOdyssey(value)}
         />
       )}
     </>

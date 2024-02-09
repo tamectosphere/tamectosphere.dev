@@ -69,7 +69,7 @@
 
 @font-face {
   font-family: "Space Grotesk";
-  font-weight: 200;
+  font-weight: 300;
   src: url("/fonts/space-grotesk.ttf") format("truetype");
 }
 
@@ -81,7 +81,13 @@
 
 @font-face {
   font-family: "Space Grotesk";
-  font-weight: 600;
+  font-weight: 500;
+  src: url("/fonts/space-grotesk.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 700;
   src: url("/fonts/space-grotesk.ttf") format("truetype");
 }
 

@@ -23,7 +23,7 @@ const RocketSlider = React.forwardRef<
       <img
         src={rocketLogo.src}
         alt={rocketLogo.alt}
-        className="text-ecto-2 rotate-45 w-10 h-10 lg:w-16 lg:h-16"
+        className="text-ecto-2 rotate-45 w-10 h-10 lg:w-16 lg:h-16 cursor-pointer"
       />
     </SliderPrimitive.Thumb>
   </SliderPrimitive.Root>
