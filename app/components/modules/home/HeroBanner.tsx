@@ -60,7 +60,7 @@ export function HeroBanner() {
       {renderWelcome && (
         <>
           <animated.div style={props3} className="text-center pb-4">
-            <h1 className="z-40 font-audiowide scroll-m-20 text-4xl font-extrabold tracking-tight md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
+            <h1 className="z-40 font-audiowide scroll-m-20 text-3xl font-extrabold tracking-tight md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
               <span className="text-ecto-2">TAM</span>
               <span className="text-ecto-1">ECTOSPHERE</span>
             </h1>
